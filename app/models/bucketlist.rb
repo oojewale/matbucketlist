@@ -1,7 +1,13 @@
 class Bucketlist < ActiveRecord::Base
-  has_one :user
+  belongs_to :user
   has_many :items
   validates :name, presence: true
-  validates :done, presence: true
-  validates :bucketlist_id, presence: true
+  validates :created_by, presence: true
+
+  def self.get_bucketlist(column, value)
+    my_bucket = Bucketlist.where("#{column}": value).first
+    my_items = my_bucket.items
+    [my_bucket, my_items]
+  end
+
 end
