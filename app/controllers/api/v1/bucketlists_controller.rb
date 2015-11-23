@@ -41,11 +41,11 @@ class Api::V1::BucketlistsController < ApplicationController
 
   def params_processor(params)
     if params.count == 2
-        bucket_data = Bucketlist.all
+      Bucketlist.all
     elsif params[:q]
-      bucket_data = Bucketlist.find_by(name: params[:q])
+      Bucketlist.find_by(name: params[:q])
     elsif numeric?(params[:page]) && numeric?(params[:limit])
-      bucket_data = Bucketlist.get_by_page(params[:page], params[:limit])
+      Bucketlist.get_by_page(params[:page], params[:limit])
     end
   end
 
