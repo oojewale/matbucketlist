@@ -10,7 +10,7 @@ class Api::V1::BucketlistsController
         }
     end
 
-    def user_bucket(data,item)
+    def user_bucket(data, item)
       {
         id: data[:bucket_id],
         name: data[:bucket_name],
@@ -38,13 +38,13 @@ class Api::V1::BucketlistsController
     def data_formatter(bucket_data)
       data = bucket_info(bucket_data)
       item = bucket_data.items
-      user_bucket(data,item)
+      user_bucket(data, item)
     end
 
     def data_format(bucket_data)
       data = bucket_info(bucket_data.first)
       item = bucket_data[1]
-      user_bucket(data,item)
+      user_bucket(data, item)
     end
 
   end

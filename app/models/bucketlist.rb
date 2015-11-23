@@ -16,5 +16,4 @@ class Bucketlist < ActiveRecord::Base
     Bucketlist.offset(offset).limit(limit)
   end
 
-
 end
