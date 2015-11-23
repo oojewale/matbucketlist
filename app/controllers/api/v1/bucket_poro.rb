@@ -21,10 +21,6 @@ class Api::V1::BucketlistsController
       }
     end
 
-    def time_parser(time_data)
-      time_data.to_time.strftime("%Y-%m-%d %H:%M:%S")
-    end
-
     def item_data(item)
       item_arr = []
       item.each do | i |
@@ -42,6 +38,12 @@ class Api::V1::BucketlistsController
     def data_formatter(bucket_data)
       data = bucket_info(bucket_data)
       item = bucket_data.items
+      user_bucket(data,item)
+    end
+
+    def data_format(bucket_data)
+      data = bucket_info(bucket_data.first)
+      item = bucket_data[1]
       user_bucket(data,item)
     end
 
