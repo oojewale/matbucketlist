@@ -5,6 +5,7 @@ gem "rails-api"
 gem "pg", "0.17.1"
 gem "figaro"
 gem "jwt"
+gem "bcrypt", "~> 3.1.7"
 gem "active_model_serializers", "~> 0.8.0"
 
 group :development do
