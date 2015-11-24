@@ -14,9 +14,9 @@ class Api::V1::BucketlistsController < ApplicationController
     info = { name: params[:name], created_by: decoded_auth_token[:user_id]}
     bucket = Bucketlist.new(info)
     if bucket.save
-      render json: { response: "Bucketlist created" }, status: 200
+      render json: { response: "Bucketlist created" }, status: :created
     else
-      render json: { error: "Could not create bucketlist" }
+      render json: { error: "Could not create bucketlist" }, status: 501
     end
   end
 
@@ -25,7 +25,7 @@ class Api::V1::BucketlistsController < ApplicationController
     bucket_data = User.get_user_bucketlist_items(user_id, "id", params[:id])
     render json: bucket_data, root: false
   rescue
-    render json: [], status: 404
+    render json: [], status: 401
   end
 
   def edit
@@ -37,14 +37,14 @@ class Api::V1::BucketlistsController < ApplicationController
       render json: { response: "Bucketlist updated!" }, status: 200
     end
   rescue
-    render json: { error: "Could not update bucketlist" }
+    render json: { error: "Could not update bucketlist" }, status: 501
   end
 
   def destroy
     user_id = decoded_auth_token[:user_id]
     render json: { response: "Bucketlist deleted" } if User.delete_bucketlist(user_id, params[:id])
   rescue
-    render json: { error: "Could not delete bucketlist with  id: #{params[:id]}." }
+    render json: { error: "Could not delete bucketlist with  id: #{params[:id]}." }, status: 500
   end
 
   protected
