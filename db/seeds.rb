@@ -3,7 +3,8 @@ class Seed
     [
       { name: "Life events", created_by: 1 },
       { name: "Things I wanna do", created_by: 2 },
-      { name: "Must do before laying on death bed", created_by: 3 }
+      { name: "Must do before laying on death bed", created_by: 3 },
+      { name: "Career events", created_by: 1 }
     ]
   end
 
@@ -16,15 +17,16 @@ class Seed
       { name: "Win the world cup", bucketlist_id: 2 },
       { name: "Win the premier league", bucketlist_id: 1 },
       { name: "Win UCL", bucketlist_id: 1 },
-      { name: "Become a coach", bucketlist_id: 3 }
+      { name: "Become a coach", bucketlist_id: 3 },
+      { name: "Top assists", bucketlist_id: 4 }
     ]
   end
 
   def users
     [
-      { username: "Ozil" },
-      { username: "Alexis" },
-      { username: "koscienly" }
+      { username: "ozil", password: "1234567890" },
+      { username: "alexis", password: "1234567890" },
+      { username: "koscienly", password: "1234567890" }
     ]
   end
 
