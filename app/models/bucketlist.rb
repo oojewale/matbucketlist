@@ -3,5 +3,4 @@ class Bucketlist < ActiveRecord::Base
   has_many :items
   validates :name, presence: true
   validates :created_by, presence: true
-
 end

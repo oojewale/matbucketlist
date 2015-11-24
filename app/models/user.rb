@@ -7,14 +7,22 @@ class User < ActiveRecord::Base
     if column.nil? || value.nil?
       where(id: user_id).first.bucketlists
     else
-      where(id: user_id).first.bucketlists.where(name: value)
+      where(id: user_id).first.bucketlists.where("#{column}": value)
     end
+  end
+
+  def self.delete_bucketlist(user_id, id)
+    where(id: user_id).first.bucketlists.delete(id)
   end
 
   def self.get_by_page(user_id, page, limit)
     limit = limit.to_i
     offset = (page.to_i - 1) * limit
     where(id: user_id).first.bucketlists.offset(offset).limit(limit)
+  end
+
+  def self.update_bucketlist(info)
+    where(id: info[:user_id]).first.bucketlists.find(info[:id]).update(name: info[:new_name])
   end
 
   def generate_auth_token
