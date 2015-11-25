@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   end
 
   def self.get_by_page(user_id, page, limit)
+    if limit.nil?
+      limit = 20
+    elsif limit.to_i > 100
+      limit = 100
+    end
     limit = limit.to_i
     offset = (page.to_i - 1) * limit
     find(user_id).bucketlists.offset(offset).limit(limit)
@@ -32,6 +37,10 @@ class User < ActiveRecord::Base
 
   def self.find_by_credentials(username, password)
     find_by(username: username).try(:authenticate, password)
+  end
+
+  def self.bucket_belong_to_user(user_token, bucket_id)
+    find(user_token).bucketlists.find(bucket_id)
   end
 
 end
