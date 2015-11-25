@@ -1,13 +1,13 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :set_current_user, :authenticate_request
 
+  include Commons
+
   def create
-    info = { username: params[:username], password: params[:password] }
-    user = User.new(info)
-    if user.save
-      render json: { response: "User successfully created!" }, status: :created
-    else
-      render json: { error: "Could not create user." }, status: 501
-    end
+      info = { username: params[:username], password: params[:password] }
+      user = User.new(info)
+      model_obj_saver(user)
+  rescue
+    render json: { error: "Cannot create user." }, status: 401
   end
 end

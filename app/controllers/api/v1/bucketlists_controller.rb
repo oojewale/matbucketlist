@@ -1,5 +1,7 @@
 class Api::V1::BucketlistsController < ApplicationController
 
+  include Commons
+
   def index
     bucket_data = params_processor(params)
     render json: bucket_data, root: false
@@ -13,11 +15,7 @@ class Api::V1::BucketlistsController < ApplicationController
   def create
     info = { name: params[:name], created_by: decoded_auth_token[:user_id]}
     bucket = Bucketlist.new(info)
-    if bucket.save
-      render json: { response: "Bucketlist created" }, status: :created
-    else
-      render json: { error: "Could not create bucketlist" }, status: 501
-    end
+    model_obj_saver(bucket)
   end
 
   def show
@@ -37,12 +35,13 @@ class Api::V1::BucketlistsController < ApplicationController
       render json: { response: "Bucketlist updated!" }, status: 200
     end
   rescue
-    render json: { error: "Could not update bucketlist" }, status: 501
+    render json: { error: "Could not update bucketlist" }, status: 304
   end
 
   def destroy
     user_id = decoded_auth_token[:user_id]
-    render json: { response: "Bucketlist deleted" } if User.delete_bucketlist(user_id, params[:id])
+    render json: { response: "Bucketlist deleted" }, status: 410 if
+    User.delete_bucketlist(user_id, params[:id])
   rescue
     render json: { error: "Could not delete bucketlist with  id: #{params[:id]}." }, status: 500
   end

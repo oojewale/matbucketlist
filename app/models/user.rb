@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :bucketlists, foreign_key: "created_by"
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :password, length: { minimum: 8 }
   has_secure_password
 
   def self.get_user_bucketlist_items(user_id, column = nil, value = nil)
