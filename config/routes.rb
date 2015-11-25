@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       post "users/create"
       post "bucketlists/:id/items" => "items#create"
       put "bucketlists/:id/items/:id" => "items#update"
-      delete "bucketlists/:id/items/:id" => "items#delete"
+      delete "bucketlists/:id/items/:id" => "items#destroy"
     end
   end
 
