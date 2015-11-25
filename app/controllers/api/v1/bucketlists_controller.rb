@@ -59,9 +59,13 @@ class Api::V1::BucketlistsController < ApplicationController
       User.get_user_bucketlist_items(user_id)
     elsif params[:q]
       User.get_user_bucketlist_items(user_id, "name", params[:q])
-    elsif numeric?(params[:page]) && numeric?(params[:limit])
+    elsif page_limiter(params[:page], params[:limit])
       User.get_by_page(user_id, params[:page], params[:limit])
     end
+  end
+
+  def page_limiter(page, limit)
+    numeric?(page) && (numeric?(limit) || limit.nil?)
   end
 
 end

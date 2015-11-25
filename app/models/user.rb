@@ -5,33 +5,42 @@ class User < ActiveRecord::Base
 
   def self.get_user_bucketlist_items(user_id, column = nil, value = nil)
     if column.nil? || value.nil?
-      where(id: user_id).first.bucketlists
+      find(user_id).bucketlists
     else
-      where(id: user_id).first.bucketlists.where("#{column}": value)
+      find(user_id).bucketlists.where("#{column}": value)
     end
   end
 
   def self.delete_bucketlist(user_id, id)
-    where(id: user_id).first.bucketlists.delete(id)
+    find(user_id).bucketlists.delete(id)
   end
 
   def self.get_by_page(user_id, page, limit)
+    if limit.nil?
+      limit = 20
+    elsif limit.to_i > 100
+      limit = 100
+    end
     limit = limit.to_i
     offset = (page.to_i - 1) * limit
-    where(id: user_id).first.bucketlists.offset(offset).limit(limit)
+    find(user_id).bucketlists.offset(offset).limit(limit)
   end
 
   def self.update_bucketlist(info)
-    where(id: info[:user_id]).first.bucketlists.find(info[:id]).update(name: info[:new_name])
+    find(info[:user_id]).bucketlists.find(info[:id]).update(name: info[:new_name])
   end
 
   def generate_auth_token
-    payload = { user_id: self.id }
+    payload = { user_id: id }
     Api::V1::Tokenizer.encode(payload)
   end
 
   def self.find_by_credentials(username, password)
     find_by(username: username).try(:authenticate, password)
+  end
+
+  def self.bucket_belong_to_user(user_token, bucket_id)
+    find(user_token).bucketlists.find(bucket_id)
   end
 
 end
