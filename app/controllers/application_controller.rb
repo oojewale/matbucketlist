@@ -11,6 +11,14 @@ class ApplicationController < ActionController::API
 
   protected
 
+  def coded_token
+    token = Base64.encode64(request.headers['Authorization'])
+  end
+
+  def is_blacklisted?
+    Blacklist.find_by(encrypted_token: coded_token)
+  end
+
   def set_current_user
     if decoded_auth_token
       @current_user ||= User.find(decoded_auth_token[:user_id])
@@ -20,7 +28,7 @@ class ApplicationController < ActionController::API
   def authenticate_request
     if auth_token_expired?
       fail Api::V1::AuthenticationTimeoutError
-    elsif !@current_user
+    elsif !@current_user || is_blacklisted?
       fail Api::V1::NotAuthenticatedError
     end
   end
@@ -38,8 +46,6 @@ class ApplicationController < ActionController::API
     @http_auth_header_content = begin
       if request.headers['Authorization'].present?
         request.headers['Authorization'].split(' ').last
-      else
-        nil
       end
     end
   end

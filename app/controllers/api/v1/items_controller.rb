@@ -11,7 +11,6 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-
     if item_owner?(params[:id])
       info = { :new_name => params[:new_name], id: params[:id], status: params[:status] }
       if Item.update_item(info)

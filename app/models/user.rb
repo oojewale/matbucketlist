@@ -32,7 +32,12 @@ class User < ActiveRecord::Base
   end
 
   def generate_auth_token
-    payload = { user_id: id }
+    payload = { user_id: id, active: true }
+    Api::V1::Tokenizer.encode(payload)
+  end
+
+  def self.deactivate_auth_token(id)
+    payload = { user_id: id, active: false }
     Api::V1::Tokenizer.encode(payload)
   end
 
@@ -43,5 +48,4 @@ class User < ActiveRecord::Base
   def self.bucket_belong_to_user(user_token, bucket_id)
     find(user_token).bucketlists.find(bucket_id)
   end
-
 end

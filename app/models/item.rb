@@ -8,8 +8,10 @@ class Item < ActiveRecord::Base
   end
 
   def self.update_item(info)
-    if info[:status] == true
-      find(info[:id]).update(name: info[:new_name], done: info[:status])
+    if info[:status] == "true"
+      find(info[:id]).update(name: info[:new_name], done: true)
+    elsif info[:status] == "false"
+      find(info[:id]).update(name: info[:new_name], done: false)
     else
       find(info[:id]).update(name: info[:new_name])
     end

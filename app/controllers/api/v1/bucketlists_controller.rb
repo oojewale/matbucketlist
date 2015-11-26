@@ -66,5 +66,4 @@ class Api::V1::BucketlistsController < ApplicationController
   def page_limiter(page, limit)
     numeric?(page) && (numeric?(limit) || limit.nil?)
   end
-
 end

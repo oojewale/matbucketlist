@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
   include Commons
 
   def create
-      info = { username: params[:username], password: params[:password] }
+      info = { username: (params[:username].downcase), password: params[:password] }
       user = User.new(info)
       model_obj_saver(user)
   rescue
