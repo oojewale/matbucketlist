@@ -10,6 +10,4 @@ Rails.application.routes.draw do
       delete "bucketlists/:id/items/:id" => "items#destroy"
     end
   end
-
-
 end

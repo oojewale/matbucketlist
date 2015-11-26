@@ -11,5 +11,12 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def logout
+    list_token = { encrypted_token: coded_token }
+    Blacklist.delete_old
+    if Blacklist.create(list_token)
+      render json: { response: "Logged out!" }, status: 200
+    end
+  rescue
+    render json: { error: "Could not log you out" }
   end
 end
