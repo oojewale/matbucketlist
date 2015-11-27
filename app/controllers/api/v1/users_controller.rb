@@ -8,6 +8,6 @@ class Api::V1::UsersController < ApplicationController
       user = User.new(info)
       model_obj_saver(user)
   rescue
-    render json: { error: "Cannot create user." }, status: 401
+    render json: { error: "Cannot create user." }, status: 403
   end
 end

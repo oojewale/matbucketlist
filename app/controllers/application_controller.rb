@@ -2,11 +2,11 @@ class ApplicationController < ActionController::API
   before_action :set_current_user, :authenticate_request
 
   rescue_from Api::V1::NotAuthenticatedError do
-    render json: { error: "Not Authorized" }, status: :unauthorized
+    render json: { error: "Not Authenticated" }, status: 401
   end
 
   rescue_from Api::V1::AuthenticationTimeoutError do
-    render json: { error: "Auth token is expired" }
+    render json: { error: "Auth token is expired" }, status: 403
   end
 
   protected

@@ -4,9 +4,9 @@ class Api::V1::AuthController < ApplicationController
   def login
     user = User.find_by_credentials((params[:username].downcase), params[:password])
     if user
-      render json: { auth_token: user.generate_auth_token }
+      render json: { auth_token: user.generate_auth_token }, status: 200
     else
-      render json: { error: "Invalid login credentials" }, status: :unauthorized
+      render json: { error: "Invalid login credentials" }, status: 401
     end
   end
 
@@ -17,6 +17,6 @@ class Api::V1::AuthController < ApplicationController
       render json: { response: "Logged out!" }, status: 200
     end
   rescue
-    render json: { error: "Could not log you out" }
+    render json: { error: "Could not log you out" }, status: 500
   end
 end
