@@ -3,7 +3,7 @@
   <head>
     <meta charset='UTF-8' />
     <title>RuboCop Inspection Report</title>
-    
+
     <style>
     * {
     -webkit-box-sizing: border-box;
@@ -315,1763 +315,1763 @@ TvFXMeuCkZPcaEBLqvgPBhCuiZo8+sAAAAAASUVORK5CYII=
       </div>
     </div>
     <div id="offenses">
-      
-      
+
+
       <div class="offense-box">
         <div class="box-title"><h3>Gemfile - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #25</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>Rakefile - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [90/80]</span>
             </div>
-            
+
             <pre><code># for example lib/tasks/capistrano.rake, and they will automatically be availabl<span class="highlight convention">e to Rake.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require File.expand_path(<span class="highlight convention">&#39;../config/application&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/auth_controller.rb - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::AuthController</span> &lt; ApplicationController</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [84/80]</span>
             </div>
-            
+
             <pre><code>    user = User.find_by_credentials((params[:username].downcase), params[:passwo<span class="highlight convention">rd])</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/authentication_timeout_error.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::AuthenticationTimeoutError</span> &lt; StandardError</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/bucket_poro.rb - 8 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::BucketlistsController</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use 2 (not 4) spaces for indentation.</span>
             </div>
-            
+
             <pre><code>    <span class="highlight convention">    </span>{</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #26</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space before first block parameter detected.</span>
             </div>
-            
+
             <pre><code>      item.each do |<span class="highlight convention"> </span>i |</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #26</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space after last block parameter detected.</span>
             </div>
-            
+
             <pre><code>      item.each do | i<span class="highlight convention"> </span>|</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #28</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.</span>
             </div>
-            
+
             <pre><code>                      <span class="highlight convention">id: i.id</span>,</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #33</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Indent the right brace the same as the start of the line where the left brace is.</span>
             </div>
-            
+
             <pre><code>                    <span class="highlight convention">}</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #49</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #51</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/bucketlists_controller.rb - 8 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::BucketlistsController</span> &lt; ApplicationController</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #14</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space inside } missing.</span>
             </div>
-            
+
             <pre><code>    info = { name: params[:name], created_by: decoded_auth_token[:user_id]<span class="highlight convention">}</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #35</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [98/80]</span>
             </div>
-            
-            <pre><code>    info = { user_id: decoded_auth_token[:user_id], id: params[:id], new_name: p<span class="highlight convention">arams[:new_name] }</span></code></pre>
-            
+
+            <pre><code>    info = { user_id: decoded_auth_token[:user_id], id: params[:id], name: p<span class="highlight convention">arams[:name] }</span></code></pre>
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #45</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [99/80]</span>
             </div>
-            
+
             <pre><code>    render json: { response: &quot;Bucketlist deleted&quot; } if User.delete_bucketlist(us<span class="highlight convention">er_id, params[:id])</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #47</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [96/80]</span>
             </div>
-            
+
             <pre><code>    render json: { error: &quot;Could not delete bucketlist with  id: #{params[:id]}.<span class="highlight convention">&quot; }, status: 500</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #70</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #71</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/decoded_auth_token.rb - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::DecodedAuthToken</span> &lt; HashWithIndifferentAccess</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/items_controller.rb - 4 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::ItemsController</span> &lt; ApplicationController</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #10</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [96/80]</span>
             </div>
-            
+
             <pre><code>    render json: { error: &quot;User does not have bucketlist with id: #{params[:id]}<span class="highlight convention">&quot; }, status: 401</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #28</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/not_authenticated_error.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::NotAuthenticatedError</span> &lt; StandardError</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/tokenizer.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::Tokenizer</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #13</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #14</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/api/v1/users_controller.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Use nested module/class definitions instead of compact style.</span>
             </div>
-            
+
             <pre><code>class <span class="highlight convention">Api::V1::UsersController</span> &lt; ApplicationController</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/controllers/application_controller.rb - 6 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #39</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>      if request.headers[<span class="highlight convention">&#39;Authorization&#39;</span>].present?</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #40</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>        request.headers[<span class="highlight convention">&#39;Authorization&#39;</span>].split(&#39; &#39;).last</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #40</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>        request.headers[&#39;Authorization&#39;].split(<span class="highlight convention">&#39; &#39;</span>).last</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #41</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Redundant <code>else</code>-clause.</span>
             </div>
-            
+
             <pre><code>      <span class="highlight convention">else</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #46</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #47</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/models/bucketlist.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #6</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
-      
-      
+
+
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>app/models/user.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #30</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [82/80]</span>
             </div>
-            
-            <pre><code>    find(info[:user_id]).bucketlists.find(info[:id]).update(name: info[:new_name<span class="highlight convention">])</span></code></pre>
-            
+
+            <pre><code>    find(info[:user_id]).bucketlists.find(info[:id]).update(name: info[:name<span class="highlight convention">])</span></code></pre>
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #45</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #46</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>bin/bundle - 4 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[<span class="highlight convention">&#39;BUNDLE_GEMFILE&#39;</span>] ||= File.expand_path(&#39;../../Gemfile&#39;, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[&#39;BUNDLE_GEMFILE&#39;] ||= File.expand_path(<span class="highlight convention">&#39;../../Gemfile&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>load Gem.bin_path(<span class="highlight convention">&#39;bundler&#39;</span>, &#39;bundle&#39;)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>load Gem.bin_path(&#39;bundler&#39;, <span class="highlight convention">&#39;bundle&#39;</span>)</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>bin/rails - 5 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  load File.expand_path(<span class="highlight convention">&#39;../spring&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  raise unless e.message.include?(<span class="highlight convention">&#39;spring&#39;</span>)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #7</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>APP_PATH = File.expand_path(<span class="highlight convention">&#39;../../config/application&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #8</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require_relative <span class="highlight convention">&#39;../config/boot&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #9</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails/commands&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>bin/rake - 4 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  load File.expand_path(<span class="highlight convention">&#39;../spring&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  raise unless e.message.include?(<span class="highlight convention">&#39;spring&#39;</span>)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #7</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require_relative <span class="highlight convention">&#39;../config/boot&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #8</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rake&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>bin/setup - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;pathname&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>APP_ROOT = Pathname.new File.expand_path(<span class="highlight convention">&#39;../../&#39;</span>,  __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Unnecessary spacing detected.</span>
             </div>
-            
+
             <pre><code>APP_ROOT = Pathname.new File.expand_path(&#39;../../&#39;,<span class="highlight convention"> </span> __FILE__)</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>bin/spring - 6 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #7</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  require <span class="highlight convention">&#39;rubygems&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #8</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  require <span class="highlight convention">&#39;bundler&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #10</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [97/80]</span>
             </div>
-            
+
             <pre><code>  if (match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \(<span class="highlight convention">(.*?)\)$.*?^$/m))</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #11</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>    Gem.paths = { <span class="highlight convention">&#39;GEM_PATH&#39;</span> =&gt; [Bundler.bundle_path.to_s, *Gem.path].uniq }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #12</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>    gem <span class="highlight convention">&#39;spring&#39;</span>, match[1]</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #13</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>    require <span class="highlight convention">&#39;spring/binstub&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config.ru - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require ::File.expand_path(<span class="highlight convention">&#39;../config/environment&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/application.rb - 6 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require File.expand_path(<span class="highlight convention">&#39;../boot&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #20</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [82/80]</span>
             </div>
-            
+
             <pre><code>    # Settings in config/environments/* take precedence over those specified her<span class="highlight convention">e.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #24</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [99/80]</span>
             </div>
-            
+
             <pre><code>    # Set Time.zone default to the specified zone and make Active Record auto-co<span class="highlight convention">nvert to this zone.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #25</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [89/80]</span>
             </div>
-            
+
             <pre><code>    # Run &quot;rake -D time&quot; for a list of tasks for finding time zone names. Defaul<span class="highlight convention">t is UTC.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #28</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [98/80]</span>
             </div>
-            
+
             <pre><code>    # The default locale is :en and all translations from config/locales/*.rb,ym<span class="highlight convention">l are auto loaded.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #29</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [87/80]</span>
             </div>
-            
+
             <pre><code>    # config.i18n.load_path += Dir[Rails.root.join(&#39;my&#39;, &#39;locales&#39;, &#39;*.{rb,yml}&#39;<span class="highlight convention">).to_s]</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/boot.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[<span class="highlight convention">&#39;BUNDLE_GEMFILE&#39;</span>] ||= File.expand_path(&#39;../../Gemfile&#39;, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[&#39;BUNDLE_GEMFILE&#39;] ||= File.expand_path(<span class="highlight convention">&#39;../../Gemfile&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;bundler/setup&#39;</span> # Set up gems listed in the Gemfile.</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/environment.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require File.expand_path(<span class="highlight convention">&#39;../application&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/environments/development.rb - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [85/80]</span>
             </div>
-            
+
             <pre><code>  # Settings specified here will take precedence over those in config/applicatio<span class="highlight convention">n.rb.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #30</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [82/80]</span>
             </div>
-            
+
             <pre><code>  # Asset digests allow you to set far-future HTTP expiration dates on all asset<span class="highlight convention">s,</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/environments/production.rb - 6 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [85/80]</span>
             </div>
-            
+
             <pre><code>  # Settings specified here will take precedence over those in config/applicatio<span class="highlight convention">n.rb.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #25</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  config.serve_static_files = ENV[<span class="highlight convention">&#39;RAILS_SERVE_STATIC_FILES&#39;</span>].present?</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #34</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [82/80]</span>
             </div>
-            
+
             <pre><code>  # Asset digests allow you to set far-future HTTP expiration dates on all asset<span class="highlight convention">s,</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #38</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [102/80]</span>
             </div>
-            
+
             <pre><code>  # `config.assets.precompile` and `config.assets.version` have moved to config/<span class="highlight convention">initializers/assets.rb</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #44</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [96/80]</span>
             </div>
-            
+
             <pre><code>  # Force all access to the app over SSL, use Strict-Transport-Security, and use<span class="highlight convention"> secure cookies.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #64</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [100/80]</span>
             </div>
-            
+
             <pre><code>  # Set this to true and configure the email server for immediate delivery to ra<span class="highlight convention">ise delivery errors.</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/environments/test.rb - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [85/80]</span>
             </div>
-            
+
             <pre><code>  # Settings specified here will take precedence over those in config/applicatio<span class="highlight convention">n.rb.</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #17</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>  config.static_cache_control = <span class="highlight convention">&#39;public, max-age=3600&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
-      
-      
+
+
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/initializers/secret_token.rb - 4 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #13</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Trailing whitespace detected.</span>
             </div>
-            
+
             <pre><code># Although this is not needed for an api-only application, rails4<span class="highlight convention"> </span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #14</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Trailing whitespace detected.</span>
             </div>
-            
+
             <pre><code># requires secret_key_base or secret_token to be defined, otherwise an<span class="highlight convention"> </span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #19</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>Matbucketlist::Application.config.secret_token = <span class="highlight convention">&#39;87e763f3d4c3e92980932fe61798a1c068b6c4cf808ae441941ee346aa0b02e436a0bc71b6ccaf77b24c8cd777a7d1ba8b08a9a9d75fe6bb5f3388a80866c013&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #19</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [179/80]</span>
             </div>
-            
+
             <pre><code>Matbucketlist::Application.config.secret_token = &#39;87e763f3d4c3e92980932fe61798a1<span class="highlight convention">c068b6c4cf808ae441941ee346aa0b02e436a0bc71b6ccaf77b24c8cd777a7d1ba8b08a9a9d75fe6bb5f3388a80866c013&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/initializers/utility.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
-      
-      
+
+
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>config/routes.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #14</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra blank line detected.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #14</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #15</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>end<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>db/seeds.rb - 8 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #37</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space before first block parameter detected.</span>
             </div>
-            
+
             <pre><code>    users.each { |<span class="highlight convention"> </span>user | User.create(user) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #37</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space after last block parameter detected.</span>
             </div>
-            
+
             <pre><code>    users.each { | user<span class="highlight convention"> </span>| User.create(user) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #38</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space before first block parameter detected.</span>
             </div>
-            
+
             <pre><code>    buckets.each { |<span class="highlight convention"> </span>bucket | Bucketlist.create(bucket) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #38</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space after last block parameter detected.</span>
             </div>
-            
+
             <pre><code>    buckets.each { | bucket<span class="highlight convention"> </span>| Bucketlist.create(bucket) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #39</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space before first block parameter detected.</span>
             </div>
-            
+
             <pre><code>    items.each { |<span class="highlight convention"> </span>item | Item.create(item) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #39</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Space after last block parameter detected.</span>
             </div>
-            
+
             <pre><code>    items.each { | item<span class="highlight convention"> </span>| Item.create(item) }</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #41</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at class body end.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #45</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Final newline missing.</span>
             </div>
-            
+
             <pre><code>sample_data.creator<span class="highlight convention"></span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/controllers/api/v1/auth_controller_spec.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #18</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body end.</span>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/controllers/api/v1/bucketlists_controller_spec.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #53</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body end.</span>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/controllers/api/v1/items_controller_spec.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #25</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body end.</span>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/controllers/api/v1/users_controller_spec.rb - 3 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #4</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body beginning.</span>
             </div>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #11</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Extra empty line detected at block body end.</span>
             </div>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/models/bucketlist_spec.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/models/item_spec.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/models/user_spec.rb - 1 offense</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #1</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rails_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/rails_helper.rb - 6 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[<span class="highlight convention">&#39;RAILS_ENV&#39;</span>] ||= &#39;test&#39;</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #2</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>ENV[&#39;RAILS_ENV&#39;] ||= <span class="highlight convention">&#39;test&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require File.expand_path(<span class="highlight convention">&#39;../../config/environment&#39;</span>, __FILE__)</code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #5</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [86/80]</span>
             </div>
-            
+
             <pre><code>abort(&quot;The Rails environment is running in production mode!&quot;) if Rails.env.produ<span class="highlight convention">ction?</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #6</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;spec_helper&#39;</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #7</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.</span>
             </div>
-            
+
             <pre><code>require <span class="highlight convention">&#39;rspec/rails&#39;</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
-      
+
+
+
       <div class="offense-box">
         <div class="box-title"><h3>spec/spec_helper.rb - 2 offenses</h3></div>
         <div class="offense-reports">
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #3</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Line is too long. [92/80]</span>
             </div>
-            
+
             <pre><code># This file was generated by the `rails generate rspec:install` command. Convent<span class="highlight convention">ionally, all</span></code></pre>
-            
+
           </div>
-          
+
           <div class="report">
             <div class="meta">
               <span class="location">Line #47</span> –
               <span class="severity convention">convention:</span>
               <span class="message">Do not use block comments.</span>
             </div>
-            
+
             <pre><code><span class="highlight convention">=begin</span></code></pre>
-            
+
           </div>
-          
+
         </div>
       </div>
-      
-      
+
+
     </div>
     <footer>
       Generated by <a href="https://github.com/bbatsov/rubocop">RuboCop</a>

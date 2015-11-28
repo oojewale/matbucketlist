@@ -17,7 +17,7 @@ RSpec.describe Item, type: :model do
   describe ".update_item" do
     let(:status) {"false"}
     it "updates item" do
-      info = { id: id, new_name: name, status: status}
+      info = { id: id, name: name, status: status}
       expect(Item.update_item(info)).to be true
     end
   end
@@ -25,12 +25,12 @@ RSpec.describe Item, type: :model do
   describe ".update_item" do
     let(:status) {"true"}
     it "updates item" do
-      info = { id: id, new_name: name, status: status}
+      info = { id: id, name: name, status: status}
       expect(Item.update_item(info)).to be true
     end
 
     it "updates item" do
-      info = { id: id, new_name: name}
+      info = { id: id, name: name}
       expect(Item.update_item(info)).to be true
     end
   end

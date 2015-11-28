@@ -1,8 +1,10 @@
 class Api::V1::AuthController < ApplicationController
   skip_before_action :authenticate_request
 
+  include Commons
+
   def login
-    user = User.find_by_credentials((params[:username].downcase), params[:password])
+    user = User.find_by_credentials((user_params[:username].downcase), user_params[:password])
     if user
       render json: { auth_token: user.generate_auth_token }, status: 200
     else

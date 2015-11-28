@@ -15,4 +15,12 @@ module Commons
     end
   end
 
+  def permitted
+    params.permit(:q, :page, :limit, :name, :id, :status, :bucketlist_id)
+  end
+
+  def user_params
+    params.permit(:username, :password)
+  end
+
 end
