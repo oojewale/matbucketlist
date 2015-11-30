@@ -23,5 +23,4 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(username, password)
     find_by(username: username).try(:authenticate, password)
   end
-
 end

@@ -14,6 +14,12 @@ RSpec.describe Item, type: :model do
     end
   end
 
+  describe ".get_item_bucket" do
+    it "returns item bucketlist" do
+      expect(Item.get_item_bucket(id)).to be_an Integer
+    end
+  end
+
   describe ".update_item" do
     let(:status) {"false"}
     it "updates item" do

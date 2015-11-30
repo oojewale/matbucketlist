@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         put "items/:id" => "items#update"
         delete "items/:id" => "items#destroy"
       end
+      match ":not_found" => "auth#none", via: :all, constraints: { not_found: /.*/ }
     end
   end
 end

@@ -1,5 +1,5 @@
 class Api::V1::AuthController < ApplicationController
-  skip_before_action :authenticate_request
+  skip_before_action :authenticate_request, only: [:login, :none]
 
   include Commons
 
@@ -18,7 +18,9 @@ class Api::V1::AuthController < ApplicationController
     if Blacklist.create(list_token)
       render json: { response: "Logged out!" }, status: 200
     end
-  rescue
-    render json: { error: "Could not log you out" }, status: 500
+  end
+
+  def none
+    render json: { error: "Specified endpoint does not exist. Please check the API doc for clarification." }, status: 404
   end
 end
