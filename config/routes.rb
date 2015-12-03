@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :bucketlists
       post "auth/login"
       get "auth/logout"
       post "users/create"
-      post "bucketlists/:id/items" => "items#create"
-      put "bucketlists/:id/items/:id" => "items#update"
-      delete "bucketlists/:id/items/:id" => "items#destroy"
+      resources :bucketlists do
+        post "items" => "items#create"
+        put "items/:id" => "items#update"
+        delete "items/:id" => "items#destroy"
+      end
+      match ":not_found" => "auth#none", via: :all, constraints: { not_found: /.*/ }
     end
   end
 end

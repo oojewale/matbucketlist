@@ -1,5 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Blacklist, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:blacklist) { Blacklist.new(encrypted_token: token) }
+  let(:token) { "qweaseeasscdcddefewfewfeefeewf" }
+
+  describe "#delete_record" do
+    it "deletes a blacklist" do
+      blacklist.save
+      expect { blacklist.delete_old }.not_to change(Blacklist, :count)
+    end
+  end
 end

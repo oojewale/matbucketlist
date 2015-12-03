@@ -1,10 +1,5 @@
 module Commons
-
   extend ActiveSupport::Concern
-
-  included do
-    # Add any callbacks here later.
-  end
 
   def model_obj_saver(model_obj)
     model = model_obj.class.name
@@ -15,4 +10,11 @@ module Commons
     end
   end
 
+  def permitted
+    params.permit(:q, :page, :limit, :name, :id, :status, :bucketlist_id)
+  end
+
+  def user_params
+    params.permit(:username, :password)
+  end
 end

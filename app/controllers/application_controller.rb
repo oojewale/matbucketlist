@@ -2,20 +2,20 @@ class ApplicationController < ActionController::API
   before_action :set_current_user, :authenticate_request
 
   rescue_from Api::V1::NotAuthenticatedError do
-    render json: { error: "Not Authorized" }, status: :unauthorized
+    render json: { error: "Not Authenticated" }, status: 401
   end
 
   rescue_from Api::V1::AuthenticationTimeoutError do
-    render json: { error: "Auth token is expired" }
+    render json: { error: "Auth token is expired" }, status: 403
   end
 
   protected
 
   def coded_token
-    token = Base64.encode64(request.headers['Authorization'])
+    Base64.encode64(request.headers["Authorization"])
   end
 
-  def is_blacklisted?
+  def blacklisted?
     Blacklist.find_by(encrypted_token: coded_token)
   end
 
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::API
   def authenticate_request
     if auth_token_expired?
       fail Api::V1::AuthenticationTimeoutError
-    elsif !@current_user || is_blacklisted?
+    elsif !@current_user || blacklisted?
       fail Api::V1::NotAuthenticatedError
     end
   end
@@ -44,10 +44,9 @@ class ApplicationController < ActionController::API
   def http_auth_header_content
     return @http_auth_header_content if defined? @http_auth_header_content
     @http_auth_header_content = begin
-      if request.headers['Authorization'].present?
-        request.headers['Authorization'].split(' ').last
+      if request.headers["Authorization"].present?
+        request.headers["Authorization"].split(" ").last
       end
     end
   end
-
 end

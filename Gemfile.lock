@@ -47,6 +47,7 @@ GEM
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
+    database_cleaner (1.5.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -163,6 +164,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.8.0)
   bcrypt (~> 3.1.7)
   codeclimate-test-reporter
+  database_cleaner
   figaro
   jwt
   pg (= 0.17.1)
@@ -172,6 +174,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   rspec-rails (~> 3.0)
   rubocop
+  simplecov
   spring
 
 BUNDLED WITH
