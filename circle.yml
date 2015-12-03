@@ -2,7 +2,7 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: matflights
+      appname: matbucketlist
 machine:
   ruby:
     version: 2.2.3
