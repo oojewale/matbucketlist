@@ -17,6 +17,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "pry"
   gem "database_cleaner"
+  gem "simplecov"
   gem "codeclimate-test-reporter", require: nil
 end
 

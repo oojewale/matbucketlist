@@ -1,5 +1,6 @@
+require "simplecov"
+SimpleCov.start
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
 
 SimpleCov.start do
   formatter SimpleCov::Formatter::MultiFormatter[
