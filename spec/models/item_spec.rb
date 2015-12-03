@@ -1,12 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Item, type: :model do
-
   subject(:item) { Item.new(name: name, done: status, bucketlist_id: bucket) }
-  let(:name) {"my item"}
-  let(:status) {false}
-  let(:bucket) {Bucketlist.first.id}
-  let(:id) {Item.first.id}
+  let(:name) { "my item" }
+  let(:status) { false }
+  let(:bucket) { Bucketlist.first.id }
+  let(:id) { Item.first.id }
 
   describe ".get_item_owner" do
     it "returns item owner" do
@@ -21,24 +20,23 @@ RSpec.describe Item, type: :model do
   end
 
   describe ".update_item" do
-    let(:status) {"false"}
+    let(:status) { "false" }
     it "updates item" do
-      info = { id: id, name: name, status: status}
+      info = { id: id, name: name, status: status }
       expect(Item.update_item(info)).to be true
     end
   end
 
   describe ".update_item" do
-    let(:status) {"true"}
+    let(:status) { "true" }
     it "updates item" do
-      info = { id: id, name: name, status: status}
+      info = { id: id, name: name, status: status }
       expect(Item.update_item(info)).to be true
     end
 
     it "updates item" do
-      info = { id: id, name: name}
+      info = { id: id, name: name }
       expect(Item.update_item(info)).to be true
     end
   end
-
 end

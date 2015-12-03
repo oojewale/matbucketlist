@@ -15,8 +15,10 @@ class User < ActiveRecord::Base
     bucketlists.offset(offset).limit(limit)
   end
 
-  def generate_auth_token
+  def generate_auth_token(flag = nil)
     payload = { user_id: id }
+    return Api::V1::Tokenizer.encode(payload, 4.minutes.from_now) unless
+    flag.nil?
     Api::V1::Tokenizer.encode(payload)
   end
 

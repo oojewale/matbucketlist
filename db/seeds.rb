@@ -34,12 +34,10 @@ class Seed
     Bucketlist.destroy_all
     User.destroy_all
     Item.destroy_all
-    users.each { | user | User.create(user) }
-    buckets.each { | bucket | Bucketlist.create(bucket) }
-    items.each { | item | Item.create(item) }
+    users.each { |user| User.create(user) }
+    buckets.each { |bucket| Bucketlist.create(bucket) }
+    items.each { |item| Item.create(item) }
   end
-
 end
-
 sample_data = Seed.new
 sample_data.creator

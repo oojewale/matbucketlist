@@ -1,11 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User, type: :model do
   subject(:user) { User.new(username: name, password: password) }
-  let(:name) {User.first.username}
-  let(:password) {"asdfghjkl"}
-  let(:id) {User.first.id}
-  let(:b_id) {User.first.bucketlists.first.id}
+  let(:name) { "messi" }
+  let(:password) { "asdfghjkl" }
+  before do
+    user.save
+  end
 
   describe ".get_by_page" do
     it "returns user bucketlists by page" do
@@ -17,7 +18,8 @@ RSpec.describe User, type: :model do
     end
 
     it "returns user bucketlists by page" do
-      expect(user.get_by_page(1, 101)).to be_an ActiveRecord::AssociationRelation
+      expect(user.get_by_page(1, 101)).to be_an ActiveRecord::
+      AssociationRelation
     end
   end
 
@@ -32,5 +34,4 @@ RSpec.describe User, type: :model do
       expect(user.generate_auth_token).to be_a String
     end
   end
-
 end
