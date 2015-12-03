@@ -12,6 +12,13 @@ RSpec.describe "Visit get routes after login", type: :request do
     end
   end
 
+  describe "GET #index" do
+    it "root redirects user to API docementation" do
+      get "/"
+      expect(response).to have_http_status(302)
+    end
+  end
+
   describe "GET #bucketlists" do
     it "fetches all user bucketlists" do
       get "/api/v1/bucketlists", {}, "Accept" => "application/json",

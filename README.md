@@ -7,4 +7,7 @@
 
 Hi, I'm building a bucketlist API with rails. More information to come very soon.
 
+
+You can find the documentation for this awesome API [here](http://docs.matbucketlist.apiary.io/)
+
 Thanks.
