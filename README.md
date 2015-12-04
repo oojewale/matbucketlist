@@ -45,7 +45,7 @@ All operations of a user are only within the scope of the users' bucket list(s) 
 
   `password - should be a registered password`
 
-  This returns an authentication token. Which must be present as an Authorization header in all requests made until after you log out or your when it expires. It should be used in this way:
+  This returns an authentication token. Which must be present as an Authorization header in all requests made until after you log out or when the token expires. It should be used this way:
 
   `Authorization: "aaaaaaaaaaaaaaa.bbbbbbbbbbbbbbb.ccccccccccccccc"`
 
@@ -96,7 +96,7 @@ All operations of a user are only within the scope of the users' bucket list(s) 
   Deletes the bucket list item with the specified id.
 
 **Notice**
-* All usernames in this API may not be less than 3 characters in length.
+* All usernames for this API may not be less than 3 characters in length.
 * All passwords may not be less than 8 characters in length.
 * This API is versioned. All endpoints should be accessed prefixed with `api/v1/`
 * You may test this API using Postman or cURL if you do not have a front-end client.
