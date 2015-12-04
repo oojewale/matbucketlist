@@ -96,6 +96,8 @@ All operations of a user are only within the scope of the users' bucket list(s) 
   Deletes the bucket list item with the specified id.
 
 **Notice**
+* All usernames in this API may not be less than 3 characters in length.
+* All passwords may not be less than 8 characters in length.
 * This API is versioned. All endpoints should be accessed prefixed with `api/v1/`
 * You may test this API using Postman or cURL if you do not have a front-end client.
 
