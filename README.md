@@ -13,7 +13,7 @@ This API is created to meet just that need.
 
 The endpoints that the API provides are listed below:
 
-| Verb | Endpoint | Description
+| Http verb | Endpoint | Description
 |--- | --- | ---
 | POST | /users/create |  Creates a new user.
 | POST | /auth/login | Logs in a user
@@ -95,9 +95,29 @@ All operations of a user are only within the scope of the users' bucket list(s) 
 
   Deletes the bucket list item with the specified id.
 
+**Notice**
+* This API is versioned. All endpoints should be accessed prefixed with `api/v1/`
+* You may test this API using Postman or cURL if you do not have a front-end client.
 
 You can also find the documentation for this awesome API [here](http://docs.matbucketlist.apiary.io/)
 
-**Notice: This API is versioned. All endpoints should be accessed prefixed with `api/v1/`**
+## API URI
+You can access the API with this URI and point to the any of the available endpoints. [https://matbucketlist.herokuapp.com/api/v1/{endpoint}](https://matbucketlist.herokuapp.com/api/v1/bucketlists).
+
+## Development Dependencies
+* This API was built using rails-api.
+* JWT was used for token authentication.
+* Rspec was used for full end-to-end testing.
+* Active Model Serializers was used for formatting json response.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/andela-oojewale/matbucketlist.
+
+* Fork it ( https://github.com/andela-oojewale/matbucketlist/fork)
+* Create your feature branch (git checkout -b feature/my-new-feature)
+* Commit your changes (git commit -am 'Add some feature')
+* Push to the branch (git push origin feature/my-new-feature)
+* Create a new Pull Request
 
 Thanks.
