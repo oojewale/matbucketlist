@@ -3,11 +3,13 @@ require "rails_helper"
 RSpec.describe "Visit post routes after login", type: :request do
   let(:user) { User.first }
   let(:token) { user.generate_auth_token }
+  let(:right_password) { "scscscd2223fdff" }
+  let(:wrong_password) { "as34" }
 
   describe "POST #create_user" do
     it "creates new user" do
       post "/api/v1/users/create", { username: "Messi",
-                                     password: "scscscdfdff" },
+                                     password: right_password },
            "Accept" => "application/json"
       expect(response).to have_http_status(201)
     end
@@ -15,7 +17,8 @@ RSpec.describe "Visit post routes after login", type: :request do
 
   describe "POST #create_user" do
     it "creates new user" do
-      post "/api/v1/users/create", { username: "ozil", password: 1234 },
+      post "/api/v1/users/create", { username: "ozil",
+                                     password: wrong_password },
            "Accept" => "application/json"
       expect(response).to have_http_status(501)
     end

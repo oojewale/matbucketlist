@@ -7,15 +7,30 @@ RSpec.describe Item, type: :model do
   let(:bucket) { Bucketlist.first.id }
   let(:id) { Item.first.id }
 
-  describe ".get_item_owner" do
-    it "returns item owner" do
-      expect(Item.get_item_owner(id)).to be_an Integer
+  describe "check relation with bucketlist" do
+    it "returns item bucketlist" do
+      item.save
+      expect(item.bucketlist).to be_a Bucketlist
     end
   end
 
-  describe ".get_item_bucket" do
+  describe "checks for bucketlist_id in item" do
+    let(:bucket) { nil }
+    it "does not save without bucketlist_id" do
+      expect { item.save }.not_to change(Item, :count)
+    end
+  end
+
+  describe "checks for item name length" do
+    let(:name) { "ab" }
+    it "does not save when item name is less than 3 characters" do
+      expect { item.save }.not_to change(Item, :count)
+    end
+  end
+
+  describe ".get_item_bucket_id" do
     it "returns item bucketlist" do
-      expect(Item.get_item_bucket(id)).to be_an Integer
+      expect(Item.get_item_bucket_id(id)).to eq(1)
     end
   end
 

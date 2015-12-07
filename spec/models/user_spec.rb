@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   subject(:user) { User.new(username: name, password: password) }
   let(:name) { "messi" }
   let(:password) { "asdfghjkl" }
+  let(:existing_user) { User.first }
   before do
     user.save
   end
@@ -32,6 +33,33 @@ RSpec.describe User, type: :model do
   describe "#generate_auth_token" do
     it "generates auth token for user" do
       expect(user.generate_auth_token).to be_a String
+    end
+  end
+
+  describe "check relation with bucketlist" do
+    it "returns user bucketlist" do
+      expect(existing_user.bucketlists.count).to eq(1)
+    end
+  end
+
+  describe "checks for username in user creation" do
+    let(:name) { nil }
+    it "does not save without name" do
+      expect { user.save }.not_to change(User, :count)
+    end
+  end
+
+  describe "checks for username length" do
+    let(:name) { "ab" }
+    it "does not save when username is less than 3 characters" do
+      expect { user.save }.not_to change(User, :count)
+    end
+  end
+
+  describe "checks for password in user creation" do
+    let(:password) { nil }
+    it "does not save without password" do
+      expect { user.save }.not_to change(User, :count)
     end
   end
 end

@@ -17,7 +17,8 @@ module Api
         bucket_data = @current_user.bucketlists.find(permitted[:id])
         render json: bucket_data, root: false
       rescue
-        render json: [], status: 403
+        render json: { error: "You have no access to this bucketlist" },
+               status: 403
       end
 
       def update

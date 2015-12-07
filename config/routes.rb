@@ -8,9 +8,10 @@ Rails.application.routes.draw do
       resources :bucketlists do
         post "items" => "items#create"
         put "items/:id" => "items#update"
+        get "items/:id" => "items#show"
         delete "items/:id" => "items#destroy"
       end
-      match ":not_found" => "auth#none", via: :all, constraints: { not_found: /.*/ }
+      match ":not_found" => "auth#invalid_endpoint", via: :all, constraints: { not_found: /.*/ }
     end
   end
 end

@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   def get_by_page(page, limit = nil)
     if limit.nil?
-      limit = 20
-    elsif limit.to_i > 100
-      limit = 100
+      limit = ENV["MINIMUM_BUCKETS_PER_PAGE"].to_i
+    elsif limit.to_i > ENV["MAXIMUM_BUCKETS_PER_PAGE"].to_i
+      limit = ENV["MAXIMUM_BUCKETS_PER_PAGE"].to_i
     end
     limit = limit.to_i
     offset = (page.to_i - 1) * limit
@@ -17,9 +17,10 @@ class User < ActiveRecord::Base
 
   def generate_auth_token(flag = nil)
     payload = { user_id: id }
-    return Api::V1::Tokenizer.encode(payload, 4.minutes.from_now) unless
-    flag.nil?
-    Api::V1::Tokenizer.encode(payload)
+    return Api::Tokenizer.encode(payload, 4.minutes.from_now) unless
+      flag.nil?
+
+    Api::Tokenizer.encode(payload)
   end
 
   def self.find_by_credentials(username, password)

@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "Visit post routes after login", type: :request do
   let(:user) { User.first }
   let(:token) { user.generate_auth_token }
+  let(:invalid_status) { "asads" }
 
   describe "PUT #update_item" do
     it "updates item" do
@@ -13,7 +14,24 @@ RSpec.describe "Visit post routes after login", type: :request do
   end
 
   describe "PUT #update_item" do
-    it "updates item fails" do
+    it "updates item" do
+      put "/api/v1/bucketlists/1/items/1", { name: "Play EPL", status: false },
+          "Accept" => "application/json", "Authorization" => token
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "PUT #update_item" do
+    it "updates item and done status is false" do
+      put "/api/v1/bucketlists/1/items/1", { name: "Play EPL",
+                                             status: invalid_status },
+          "Accept" => "application/json", "Authorization" => token
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "PUT #update_item" do
+    it "updates item fails for invalid item id" do
       put "/api/v1/bucketlists/1/items/2", { name: "Play EPL", status: true },
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(401)
@@ -21,7 +39,7 @@ RSpec.describe "Visit post routes after login", type: :request do
   end
 
   describe "PUT #update_item" do
-    it "updates item fails" do
+    it "updates item fails for invalid bucketlist_id" do
       put "/api/v1/bucketlists/10/items/9", { name: "Play EPL", status: true },
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(304)

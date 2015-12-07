@@ -1,7 +1,8 @@
 module Api
   module V1
     class AuthController < ApplicationController
-      skip_before_action :authenticate_request, only: [:login, :none]
+      skip_before_action :authenticate_request, only: [:login,
+                                                       :invalid_endpoint]
 
       include Commons
 
@@ -23,7 +24,7 @@ module Api
         end
       end
 
-      def none
+      def invalid_endpoint
         render json: { error: "Specified endpoint does not exist.
                               Please check the API doc for clarification." },
                status: 404

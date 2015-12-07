@@ -3,21 +3,15 @@ class Item < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 3 }
   validates :bucketlist_id, presence: true
 
-  def self.get_item_owner(id)
-    Item.find(id).bucketlist.created_by
-  end
-
-  def self.get_item_bucket(id)
-    Item.find(id).bucketlist.id
+  def self.get_item_bucket_id(id)
+    Item.find(id).bucketlist_id
   end
 
   def self.update_item(info)
-    if info[:status] == "true"
-      find(info[:id]).update(name: info[:name], done: true)
-    elsif info[:status] == "false"
-      find(info[:id]).update(name: info[:name], done: false)
-    else
-      find(info[:id]).update(name: info[:name])
-    end
+    return find(info[:id]).update(name: info[:name], done: true) if
+      info[:status] == true
+    return find(info[:id]).update(name: info[:name], done: false) if
+      info[:status] == false
+    find(info[:id]).update(name: info[:name])
   end
 end
