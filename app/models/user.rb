@@ -17,9 +17,8 @@ class User < ActiveRecord::Base
 
   def generate_auth_token(flag = nil)
     payload = { user_id: id }
-    return Api::Tokenizer.encode(payload, 4.minutes.from_now) unless
+    return Api::Tokenizer.encode(payload, 4.minutes.ago) unless
       flag.nil?
-
     Api::Tokenizer.encode(payload)
   end
 

@@ -1,6 +1,7 @@
 module Api
   class Tokenizer
     SECRET = Rails.application.secrets.secret_key_base
+    # LEEWAY = 120
 
     def self.encode(payload, exp = 12.hours.from_now)
       payload[:exp] = exp.to_i
@@ -9,13 +10,12 @@ module Api
 
     def self.decode(token)
       # require "pry"; binding.pry
-      # payload = JWT.decode(token, Rails.application.secrets.secret_key_base, true).
-      #           first
+      # payload = JWT.decode(token, Rails.application.secrets.secret_key_base).first
       # Api::V1::DecodedAuthToken.new(payload)
-      payload = JWT.decode(token, SECRET, true, { :algorithm => 'HS256' })
+      payload = JWT.decode(token, SECRET, true, { algorithm: 'HS256' })
+      payload[0]
     rescue JWT::ExpiredSignature
-      # nil
-      :expired
+      nil
     end
   end
 end

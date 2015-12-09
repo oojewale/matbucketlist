@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   end
 
   rescue_from Api::AuthenticationTimeoutError do
-    render json: { error: "Auth token is expired" }, status: 403
+    render json: { error: "Auth token is expired or not present" }, status: 403
   end
 
   protected
@@ -20,8 +20,11 @@ class ApplicationController < ActionController::API
   end
 
   def set_current_user
+
     if decoded_auth_token
-      @current_user ||= User.find(decoded_auth_token[:user_id])
+        # require "pry"; binding.pry
+      @current_user ||= User.find(decoded_auth_token["user_id"])
+
     end
   end
 
@@ -34,12 +37,14 @@ class ApplicationController < ActionController::API
   end
 
   def decoded_auth_token
-    @decoded_auth_token ||= Api::Tokenizer.decode(http_auth_header_content)
+    if http_auth_header_content
+      @decoded_auth_token ||= Api::Tokenizer.decode(http_auth_header_content)
+    end
   end
 
   def auth_token_expired?
     # decoded_auth_token && decoded_auth_token.expired?
-    decoded_auth_token == :expired
+    decoded_auth_token.nil?
   end
 
   def http_auth_header_content

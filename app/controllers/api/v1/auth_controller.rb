@@ -1,7 +1,7 @@
 module Api
   module V1
     class AuthController < ApplicationController
-      skip_before_action :authenticate_request, only: [:login,
+      skip_before_action :set_current_user, :authenticate_request, only: [:login,
                                                        :invalid_endpoint]
 
       include Commons
