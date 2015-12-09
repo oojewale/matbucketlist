@@ -5,9 +5,7 @@ RSpec.describe "Unauthorized access", type: :request do
     it "returns 401" do
       get "/api/v1/auth/logout", {}, "Accept" => "application/json"
       expect(response).to have_http_status(401)
-      body = JSON.parse(response.body)
-      message = body["error"]
-      expect(message).to match("Not Authenticated")
+      expect(message(response)).to match("Not Authenticated")
     end
   end
 
@@ -15,9 +13,7 @@ RSpec.describe "Unauthorized access", type: :request do
     it "returns 404" do
       get "/api/v1/logouts", {}, "Accept" => "application/json"
       expect(response).to have_http_status(404)
-      body = JSON.parse(response.body)
-      message = body["error"]
-      expect(message).to include("Specified endpoint does not exist.")
+      expect(message(response)).to include("Specified endpoint does not exist.")
     end
   end
 end

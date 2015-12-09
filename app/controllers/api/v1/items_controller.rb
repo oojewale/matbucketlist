@@ -12,8 +12,8 @@ module Api
           model_obj_saver(item)
         end
       rescue
-        render json: { error: "User does not have bucketlist with id:
-                       #{permitted[:id]}" }, status: 403
+        render json: { error: "User does not have bucketlist with
+                              id: #{permitted[:bucketlist_id]}" }, status: 403
       end
 
       def show

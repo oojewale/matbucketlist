@@ -38,7 +38,8 @@ class ApplicationController < ActionController::API
   end
 
   def auth_token_expired?
-    decoded_auth_token && decoded_auth_token.expired?
+    # decoded_auth_token && decoded_auth_token.expired?
+    decoded_auth_token == :expired
   end
 
   def http_auth_header_content
