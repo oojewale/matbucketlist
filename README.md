@@ -20,14 +20,14 @@ The endpoints that the API provides are listed below:
 | GET | /auth/logout | Logs a user out
 | POST | /bucketlists/ | Creates a new bucket list
 | GET  | /bucketlists/ | Lists all the created bucket lists
-| GET | /bucketlists/<id> | Gets single bucket list
+| GET | /bucketlists/:id | Gets single bucket list
 | GET | /bucketlists?q=name | Gets bucket list with the name specified
 | GET | /bucketlists?page=2&limit=23 | Paginates your bucket lists.
-| PUT | /bucketlists/<id> | Updates this bucket list
-| DELETE | /bucketlists/<id> | Deletes this single bucket list
-| POST | /bucketlists/<id>/items/ | Creates a new item in bucket list
-| PUT | /bucketlists/<id>/items/<item_id> | Updates a bucket list item
-| DELETE | /bucketlists/<id>/items/<item_id> | Deletes an item in a bucket list
+| PUT | /bucketlists/:id | Updates this bucket list
+| DELETE | /bucketlists/:id | Deletes this single bucket list
+| POST | /bucketlists/:id/items/ | Creates a new item in bucket list
+| PUT | /bucketlists/:id/items/:item_id | Updates a bucket list item
+| DELETE | /bucketlists/:id/items/:item_id | Deletes an item in a bucket list
 
 Only the new user creation and user login endpoints are accessible without being logged in. All others require the user to be logged in.
 
@@ -72,7 +72,7 @@ All operations of a user are only within the scope of the users' bucket list(s) 
 
   The default number of bucket lists for pagination is 20 per page but you can specify that you want as much as 100 on a page.
 
-* To update a bucketlist, access `[PUT /bucketlists/id]` with the following parameters:
+* To update a bucketlist, access `[PUT /bucketlists/:id]` with the following parameters:
 
   `name - name of the bucket list you want to update`
 
@@ -80,18 +80,18 @@ All operations of a user are only within the scope of the users' bucket list(s) 
 
   Deletes the bucket list with the specified id and all it associated items.
 
-* To create a bucketlist item, access `[POST /bucketlists/bucketlist_id/items]` with the following parameters:
+* To create a bucketlist item, access `[POST /bucketlists/:bucketlist_id/items]` with the following parameters:
 
   `name - name of your bucketlist item`
 
-* To update a bucketlist item, access `[PUT /bucketlists/bucketlist_id/items/id] ` with the following parameters:
+* To update a bucketlist item, access `[PUT /bucketlists/:bucketlist_id/items/:id] ` with the following parameters:
 
   `name - name of your bucketlist item`
 
   `status - This states whether you have achieved or done this particular item. Defaults to false. Only change to true if you want to check it as done.`
 
 
-* To delete a bucketlist item, access `[DELETE /bucketlists/bucketlist_id/items/id]`.
+* To delete a bucketlist item, access `[DELETE /bucketlists/:bucketlist_id/items/:id]`.
 
   Deletes the bucket list item with the specified id.
 

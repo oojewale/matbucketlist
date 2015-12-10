@@ -6,7 +6,7 @@ RSpec.describe Api::V1::AuthController, type: :controller do
 
   describe "POST #login" do
     it "returns http success" do
-      post :login, prefix: "/api/v1/auth", username: username,
+      post :login, prefix: "/api/auth", username: username,
                    password: password
       expect(response).to have_http_status(200)
     end
@@ -15,7 +15,7 @@ RSpec.describe Api::V1::AuthController, type: :controller do
   describe "POST #login" do
     let(:username) { "bolu" }
     it "returns http unauthenticated" do
-      post :login, prefix: "/api/v1/auth", username: username,
+      post :login, prefix: "/api/auth", username: username,
                    password: password
       expect(response).to have_http_status(401)
     end

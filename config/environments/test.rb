@@ -39,4 +39,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  ENV["MINIMUM_BUCKETS_PER_PAGE"] = "20"
+  ENV["MAXIMUM_BUCKETS_PER_PAGE"] = "100"
 end

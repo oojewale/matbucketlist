@@ -17,7 +17,8 @@ module Api
         bucket_data = @current_user.bucketlists.find(permitted[:id])
         render json: bucket_data, root: false
       rescue
-        render json: [], status: 403
+        render json: { error: "You have no access to this bucketlist" },
+               status: 403
       end
 
       def update
@@ -27,7 +28,7 @@ module Api
           render json: { response: "Bucketlist updated!" }, status: 200
         end
       rescue
-        render json: { error: "Could not update bucketlist" }, status: 304
+        render json: { error: "Could not update bucketlist" }, status: 403
       end
 
       def destroy
@@ -35,7 +36,7 @@ module Api
         @current_user.bucketlists.find(permitted[:id]).destroy
       rescue
         render json: { error: "Could not delete bucketlist with  id:
-                       #{permitted[:id]}." }, status: 500
+                              #{permitted[:id]}." }, status: 403
       end
 
       protected
