@@ -45,7 +45,7 @@ RSpec.describe "Visit get routes after login", type: :request do
 
   describe "GET #bucketlists" do
     it "paginates all user bucketlists" do
-      get "/api/v1/bucketlists", { page: 1, limit: 1 },
+      get "/api/v1/bucketlists", { page: 1, limit: 2 },
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(200)
       expect(message(response)).to include("name" => "Life events")
