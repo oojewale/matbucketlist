@@ -6,17 +6,22 @@ RSpec.describe "Visit get routes after login", type: :request do
 
   describe "GET #logout" do
     it "logs user out" do
-      get "/api/v1/auth/logout", {}, "Accept" => "application/json",
-                                     "Authorization" => token
+      get "/api/auth/logout", {}, "Accept" => "application/json",
+                                  "Authorization" => token
       expect(response).to have_http_status(200)
       expect(message(response)).to include("Logged out!")
+
+      get "/api/v1/bucketlists", {}, "Accept" => "application/json",
+                                     "Authorization" => token
+      expect(response).to have_http_status(401)
+      expect(message(response)).to include("Not Authenticated")
     end
   end
 
   describe "GET #index" do
     it "root redirects user to API docementation" do
       get "/"
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(308)
     end
   end
 
@@ -25,7 +30,7 @@ RSpec.describe "Visit get routes after login", type: :request do
       get "/api/v1/bucketlists", {}, "Accept" => "application/json",
                                      "Authorization" => token
       expect(response).to have_http_status(200)
-      expect(message(response)).to include({ "created_by" => 1 })
+      expect(message(response)).to include("created_by" => 1)
     end
   end
 
@@ -34,7 +39,7 @@ RSpec.describe "Visit get routes after login", type: :request do
       get "/api/v1/bucketlists", { q: "Life events" },
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(200)
-      expect(message(response)).to include({ "name" => "Life events" })
+      expect(message(response)).to include("name" => "Life events")
     end
   end
 
@@ -43,7 +48,7 @@ RSpec.describe "Visit get routes after login", type: :request do
       get "/api/v1/bucketlists", { page: 1, limit: 1 },
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(200)
-      expect(message(response)).to include({ "name" => "Life events" })
+      expect(message(response)).to include("name" => "Life events")
     end
   end
 
@@ -52,7 +57,7 @@ RSpec.describe "Visit get routes after login", type: :request do
       get "/api/v1/bucketlists/1", {}, "Accept" => "application/json",
                                        "Authorization" => token
       expect(response).to have_http_status(200)
-      expect(message(response)).to include({ "id" => 1 })
+      expect(message(response)).to include("id" => 1)
     end
   end
 
@@ -61,16 +66,17 @@ RSpec.describe "Visit get routes after login", type: :request do
       get "/api/v1/bucketlists/sdfdsdfdc", {},
           "Accept" => "application/json", "Authorization" => token
       expect(response).to have_http_status(403)
-      expect(message(response)).to include("You have no access to this bucketlist")
+      expect(message(response)).
+        to include "You have no access to this bucketlist"
     end
   end
 
   describe "GET #item" do
     it "fetches a specific bucketlist item" do
       get "/api/v1/bucketlists/1/items/1", {}, "Accept" => "application/json",
-                                       "Authorization" => token
+                                               "Authorization" => token
       expect(response).to have_http_status(200)
-      expect(message(response)).to include({ "name" => "Play in la liga" })
+      expect(message(response)).to include("name" => "Play in la liga")
     end
   end
 

@@ -24,6 +24,15 @@ RSpec.describe "Visit post routes after login", type: :request do
   end
 
   describe "PUT #update_item" do
+    it "updates item without status" do
+      put "/api/v1/bucketlists/1/items/1", { name: "Play EPL" },
+          "Accept" => "application/json", "Authorization" => token
+      expect(response).to have_http_status(200)
+      expect(message(response)).to include("Item updated!")
+    end
+  end
+
+  describe "PUT #update_item" do
     it "updates item and done status defaults to false" do
       put "/api/v1/bucketlists/1/items/1", { name: "Play EPL",
                                              status: invalid_status },
@@ -46,7 +55,7 @@ RSpec.describe "Visit post routes after login", type: :request do
     it "updates item fails for invalid bucketlist_id" do
       put "/api/v1/bucketlists/10/items/9", { name: "Play EPL", status: true },
           "Accept" => "application/json", "Authorization" => token
-      expect(response).to have_http_status(304)
+      expect(response).to have_http_status(403)
       expect(message(response)).to include("Could not update bucketlist item")
     end
   end
@@ -64,7 +73,7 @@ RSpec.describe "Visit post routes after login", type: :request do
     it "updates bucketlist fails" do
       put "/api/v1/bucketlists/10", { name: "Play EPL", status: true },
           "Accept" => "application/json", "Authorization" => token
-      expect(response).to have_http_status(304)
+      expect(response).to have_http_status(403)
       expect(message(response)).to include("Could not update bucketlist")
     end
   end
@@ -82,7 +91,7 @@ RSpec.describe "Visit post routes after login", type: :request do
     it "delete bucketlist fails" do
       delete "/api/v1/bucketlists/10", {},
              "Accept" => "application/json", "Authorization" => token
-      expect(response).to have_http_status(500)
+      expect(response).to have_http_status(403)
       expect(message(response)).to include("Could not delete bucketlist")
     end
   end
@@ -109,7 +118,7 @@ RSpec.describe "Visit post routes after login", type: :request do
     it "delete item from bucketlist fails" do
       delete "/api/v1/bucketlists/0/items/10", {},
              "Accept" => "application/json", "Authorization" => token
-      expect(response).to have_http_status(500)
+      expect(response).to have_http_status(403)
       expect(message(response)).to include("Could not delete bucketlist item")
     end
   end

@@ -28,7 +28,7 @@ module Api
           render json: { response: "Bucketlist updated!" }, status: 200
         end
       rescue
-        render json: { error: "Could not update bucketlist" }, status: 304
+        render json: { error: "Could not update bucketlist" }, status: 403
       end
 
       def destroy
@@ -36,7 +36,7 @@ module Api
         @current_user.bucketlists.find(permitted[:id]).destroy
       rescue
         render json: { error: "Could not delete bucketlist with  id:
-                       #{permitted[:id]}." }, status: 500
+                              #{permitted[:id]}." }, status: 403
       end
 
       protected

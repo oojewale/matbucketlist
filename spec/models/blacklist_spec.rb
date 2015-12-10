@@ -24,5 +24,4 @@ RSpec.describe Blacklist, type: :model do
       expect { blacklist.save }.to change(Blacklist, :count)
     end
   end
-
 end

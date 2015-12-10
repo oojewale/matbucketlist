@@ -20,11 +20,8 @@ class ApplicationController < ActionController::API
   end
 
   def set_current_user
-
     if decoded_auth_token
-        # require "pry"; binding.pry
       @current_user ||= User.find(decoded_auth_token["user_id"])
-
     end
   end
 
@@ -43,7 +40,6 @@ class ApplicationController < ActionController::API
   end
 
   def auth_token_expired?
-    # decoded_auth_token && decoded_auth_token.expired?
     decoded_auth_token.nil?
   end
 

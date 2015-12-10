@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe "Unauthorized access", type: :request do
   describe "GET #logout" do
     it "returns 403" do
-      get "/api/v1/auth/logout", {}, "Accept" => "application/json"
+      get "/api/auth/logout", {}, "Accept" => "application/json"
       expect(response).to have_http_status(403)
-      expect(message(response)).to include("Auth token is expired or not present")
+      expect(message response).to include "Auth token is expired or not present"
     end
   end
 

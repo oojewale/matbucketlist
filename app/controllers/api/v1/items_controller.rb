@@ -21,7 +21,8 @@ module Api
           item = Item.find(permitted[:id])
           render json: item, root: false
         else
-          render json: { error: "You have no access to this item" } , status: 403
+          render json: { error: "You have no access to this item" },
+                 status: 403
         end
       rescue
         render json: { error: "Bucketlist and item mismatch." },
@@ -30,9 +31,7 @@ module Api
 
       def update
         if item_owner?
-          info = { name: permitted[:name], id: permitted[:id],
-                   status: permitted[:status].to_b }
-          if Item.update_item(info)
+          if Item.update_item(check_status_presence)
             render json: { response: "Item updated!" }, status: 200
           end
         else
@@ -41,7 +40,7 @@ module Api
         end
       rescue
         render json: { error: "Could not update bucketlist item." },
-               status: 304
+               status: 403
       end
 
       def destroy
@@ -54,7 +53,7 @@ module Api
         end
       rescue
         render json: { error: "Could not delete bucketlist item with  id:
-                       #{permitted[:id]}." }, status: 500
+                       #{permitted[:id]}." }, status: 403
       end
 
       protected
@@ -64,6 +63,15 @@ module Api
         bucket_id = permitted[:bucketlist_id].to_i
         if bucket_id == Item.get_item_bucket_id(item_id)
           @current_user.id == Bucketlist.find(bucket_id).created_by
+        end
+      end
+
+      def check_status_presence
+        if permitted[:status].nil?
+          return { name: permitted[:name], id: permitted[:id] }
+        else
+          return { name: permitted[:name], id: permitted[:id],
+                   status: permitted[:status].to_b }
         end
       end
     end

@@ -45,5 +45,4 @@ RSpec.describe Bucketlist, type: :model do
       expect { bucket.save }.not_to change(Bucketlist, :count)
     end
   end
-
 end
