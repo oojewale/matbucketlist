@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "api/v1/users#index"
   namespace :api do
     post "auth/login"
     get "auth/logout"

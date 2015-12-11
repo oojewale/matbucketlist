@@ -4,10 +4,6 @@ module Api
 
     include Commons
 
-    def index
-      redirect_to "http://docs.matbucketlist.apiary.io/", status: 308
-    end
-
     def create
       info = { username: (user_params[:username].downcase),
                password: user_params[:password] }
