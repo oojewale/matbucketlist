@@ -18,16 +18,16 @@ The endpoints that the API provides are listed below:
 | POST | /users/create |  Creates a new user.
 | POST | /auth/login | Logs in a user
 | GET | /auth/logout | Logs a user out
-| POST | /bucketlists/ | Creates a new bucket list
-| GET  | /bucketlists/ | Lists all the created bucket lists
-| GET | /bucketlists/:id | Gets single bucket list
-| GET | /bucketlists?q=name | Gets bucket list with the name specified
-| GET | /bucketlists?page=2&limit=23 | Paginates your bucket lists.
-| PUT | /bucketlists/:id | Updates this bucket list
-| DELETE | /bucketlists/:id | Deletes this single bucket list
-| POST | /bucketlists/:id/items/ | Creates a new item in bucket list
-| PUT | /bucketlists/:id/items/:item_id | Updates a bucket list item
-| DELETE | /bucketlists/:id/items/:item_id | Deletes an item in a bucket list
+| POST | /v1//bucketlists/ | Creates a new bucket list
+| GET  | /v1/bucketlists/ | Lists all the created bucket lists
+| GET | /v1/bucketlists/:id | Gets single bucket list
+| GET | /v1/bucketlists?q=name | Gets bucket list with the name specified
+| GET | /v1/bucketlists?page=2&limit=23 | Paginates your bucket lists.
+| PUT | /v1/bucketlists/:id | Updates this bucket list
+| DELETE | /v1/bucketlists/:id | Deletes this single bucket list
+| POST | /v1/bucketlists/:id/items/ | Creates a new item in bucket list
+| PUT | /v1/bucketlists/:id/items/:item_id | Updates a bucket list item
+| DELETE | /v1/bucketlists/:id/items/:item_id | Deletes an item in a bucket list
 
 Only the new user creation and user login endpoints are accessible without being logged in. All others require the user to be logged in.
 
@@ -101,10 +101,10 @@ All operations of a user are only within the scope of the users' bucket list(s) 
 * This API is versioned. All endpoints should be accessed prefixed with `api/v1/`
 * You may test this API using Postman or cURL if you do not have a front-end client.
 
-You can also find the documentation for this awesome API [here](http://docs.matbucketlist.apiary.io/)
+You can also find the documentation for this awesome API [here](http://matbucketlist.herokuapp.com/)
 
 ## API URI
-You can access the API with this URI and point to the any of the available endpoints. [https://matbucketlist.herokuapp.com/api/v1/{endpoint}](https://matbucketlist.herokuapp.com/api/v1/bucketlists).
+You can access the API with this URI and point to the any of the available endpoints. [https://matbucketlist.herokuapp.com/api/{endpoint}](https://matbucketlist.herokuapp.com).
 
 ## Development Dependencies
 * This API was built using rails-api.
