@@ -18,7 +18,7 @@ The endpoints that the API provides are listed below:
 | POST | /users/create |  Creates a new user.
 | POST | /auth/login | Logs in a user
 | GET | /auth/logout | Logs a user out
-| POST | /v1//bucketlists/ | Creates a new bucket list
+| POST | /v1/bucketlists/ | Creates a new bucket list
 | GET  | /v1/bucketlists/ | Lists all the created bucket lists
 | GET | /v1/bucketlists/:id | Gets single bucket list
 | GET | /v1/bucketlists?q=name | Gets bucket list with the name specified
